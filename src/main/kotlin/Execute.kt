@@ -291,14 +291,14 @@ fun execute(machine: Machine, waitForKeyPress: () -> UByte, notifyDisplayUpdated
                 0x0015u -> {
                     // Set delay timer = Vx.
                     val x = (op and 0x0F00u) shr 8
-                    machine.st = machine.v[x]
+                    machine.dt = machine.v[x]
                 }
 
                 // Fx18 - LD ST, Vx
                 0x0018u -> {
                     // Set sound timer = Vx.
                     val x = (op and 0x0F00u) shr 8
-                    machine.dt = machine.v[x]
+                    machine.st = machine.v[x]
                 }
 
                 // Fx1E - ADD I, Vx
